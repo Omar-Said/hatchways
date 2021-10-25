@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Student } from "../../types/FetchStudents";
 import { HomeProps } from ".";
+import Container from "../../components/Container";
 
 export default function Home({
   handleGetStudents,
@@ -15,12 +16,12 @@ export default function Home({
     return <p>"Error occured"</p>;
   }
   return (
-    <div>
+    <Container color="blue">
       {loading
         ? "loading"
         : students?.map((student: Student) => {
             return <p key={student.id}>{student.company}</p>;
           })}
-    </div>
+    </Container>
   );
 }
