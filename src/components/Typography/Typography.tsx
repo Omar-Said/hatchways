@@ -3,13 +3,21 @@ import * as Styles from "./Typography.styles";
 
 interface TypographyProps {
   color?: string;
+  fontSize?: number;
+  fontWeight?: number;
 }
 
-const Container: React.FC<TypographyProps> = ({
-  color = "white",
+const Typography: React.FC<TypographyProps> = ({
+  color = "#b0b0b0",
+  fontSize = 1,
+  fontWeight = 300,
   children,
 }) => {
-  return <Styles.Root color={color}>{children}</Styles.Root>;
+  return (
+    <Styles.Root color={color} fontSize={fontSize} fontWeight={fontWeight}>
+      {children}
+    </Styles.Root>
+  );
 };
 
-export default Container;
+export default Typography;
