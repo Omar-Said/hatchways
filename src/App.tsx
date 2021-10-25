@@ -7,9 +7,7 @@ function App() {
     <>
       <GlobalStyles />
       <div className="App">
-        <header className="App-header">
-          <Home />
-        </header>
+        <Home />
       </div>
     </>
   );

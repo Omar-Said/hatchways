@@ -16,12 +16,14 @@ export default function Home({
     return <p>"Error occured"</p>;
   }
   return (
-    <Container color="blue">
-      {loading
-        ? "loading"
-        : students?.map((student: Student) => {
-            return <p key={student.id}>{student.company}</p>;
-          })}
+    <Container color="#fff">
+      <div>
+        {loading
+          ? "loading"
+          : students?.map((student: Student) => {
+              return <p key={student.id}>{student.company}</p>;
+            })}
+      </div>
     </Container>
   );
 }
