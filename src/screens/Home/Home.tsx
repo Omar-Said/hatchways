@@ -3,6 +3,7 @@ import { Student } from "../../types/FetchStudents";
 import { HomeProps } from ".";
 import Container from "../../components/Container";
 import Typography from "../../components/Typography";
+import * as Styles from "./Home.styles";
 
 export default function Home({
   handleGetStudents,
@@ -18,24 +19,26 @@ export default function Home({
   }
   return (
     <Container color="#fff">
-      <div>
+      <Styles.Card>
         {loading
           ? "loading"
-          : students?.map((student: Student) => {
-              return (
-                <div key={student.id}>
-                  <img src={student.pic} alt="student image" />
-                  <Typography color={"#000"} fontSize={2} fontWeight={700}>
-                    {student.firstName + student.lastName}
-                  </Typography>
-                  <Typography>Email: {student.email}</Typography>
-                  <Typography>Company: {student.company}</Typography>
-                  <Typography>Skill: {student.skill}</Typography>
-                  <Typography>Average: {student.grades}</Typography>
-                </div>
-              );
-            })}
-      </div>
+          : students?.map((student: Student) => (
+              <Styles.Grid>
+                <Styles.GridItem>
+                  <img src={student.pic} alt="" />
+                </Styles.GridItem>
+                <Styles.GridItem>
+                  {Object.keys(student).map((key, index) => {
+                    return (
+                      <Typography key={index}>
+                        {key}: {student[key as keyof Student]}
+                      </Typography>
+                    );
+                  })}
+                </Styles.GridItem>
+              </Styles.Grid>
+            ))}
+      </Styles.Card>
     </Container>
   );
 }
