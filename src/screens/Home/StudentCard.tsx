@@ -14,7 +14,7 @@ export default function StudentCard({ student }: StudentCardProps) {
     grades.length;
   return (
     <Styles.GridItem height={100} width={500}>
-      <Typography>
+      <Typography color="#000" fontSize={2} fontWeight={900} capitalize>
         {firstName} {lastName}
       </Typography>
       <Typography>Email: {email}</Typography>
