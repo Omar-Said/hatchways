@@ -9,4 +9,10 @@ export const Root = styled.div<{ color: string }>`
   border-radius: 8px;
   margin-top: 5rem;
   border: 2px solid #e7e7e7;
+  max-height: 85vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;

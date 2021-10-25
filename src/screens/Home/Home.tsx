@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { Student } from "../../types/FetchStudents";
 import { HomeProps } from ".";
 import Container from "../../components/Container";
-import Typography from "../../components/Typography";
+
 import * as Styles from "./Home.styles";
+import StudentCard from "./StudentCard";
 
 export default function Home({
   handleGetStudents,
@@ -23,19 +24,11 @@ export default function Home({
         {loading
           ? "loading"
           : students?.map((student: Student) => (
-              <Styles.Grid>
-                <Styles.GridItem>
+              <Styles.Grid key={student.id}>
+                <Styles.GridItem height={85} width={85}>
                   <img src={student.pic} alt="" />
                 </Styles.GridItem>
-                <Styles.GridItem>
-                  {Object.keys(student).map((key, index) => {
-                    return (
-                      <Typography key={index}>
-                        {key}: {student[key as keyof Student]}
-                      </Typography>
-                    );
-                  })}
-                </Styles.GridItem>
+                <StudentCard student={student}></StudentCard>
               </Styles.Grid>
             ))}
       </Styles.Card>
