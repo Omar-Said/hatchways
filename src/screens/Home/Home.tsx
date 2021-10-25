@@ -25,8 +25,8 @@ export default function Home({
           ? "loading"
           : students?.map((student: Student) => (
               <Styles.Grid key={student.id}>
-                <Styles.GridItem height={85} width={85}>
-                  <img src={student.pic} alt="" />
+                <Styles.GridItem>
+                  <Styles.GridItemImage src={student.pic} alt="student image" />
                 </Styles.GridItem>
                 <StudentCard student={student}></StudentCard>
               </Styles.Grid>

@@ -6,9 +6,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <div className="App">
-        <Home />
-      </div>
+      <Home />
     </>
   );
 }

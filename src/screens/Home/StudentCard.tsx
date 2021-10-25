@@ -13,14 +13,16 @@ export default function StudentCard({ student }: StudentCardProps) {
     grades.reduce((acc, current) => Number(acc) + Number(current), 0) /
     grades.length;
   return (
-    <Styles.GridItem height={100} width={500}>
+    <Styles.GridItem>
       <Typography color="#000" fontSize={2} fontWeight={900} capitalize>
         {firstName} {lastName}
       </Typography>
-      <Typography>Email: {email}</Typography>
-      <Typography>Company: {company}</Typography>
-      <Typography>Skill: {skill}</Typography>
-      <Typography>Average: {average}%</Typography>
+      <Styles.DetailsContainer>
+        <Typography>Email: {email}</Typography>
+        <Typography>Company: {company}</Typography>
+        <Typography>Skill: {skill}</Typography>
+        <Typography>Average: {average}%</Typography>
+      </Styles.DetailsContainer>
     </Styles.GridItem>
   );
 }
