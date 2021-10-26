@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Student } from "../../types/FetchStudents";
 import Typography from "../../components/Typography";
 import * as Styles from "./Home.styles";
+import AddTag from "./AddTag";
 
 interface StudentCardProps {
   student: Student;
@@ -9,10 +10,15 @@ interface StudentCardProps {
 
 export default function StudentCard({ student }: StudentCardProps) {
   const [showGrades, setShowGrades] = useState(false);
+  const [tagName, setTagName] = useState("");
   const { firstName, lastName, email, company, skill, grades } = student;
   const average =
     grades.reduce((acc, current) => Number(acc) + Number(current), 0) /
     grades.length;
+
+  const createTag = (value: string) => {
+    setTagName(value);
+  };
 
   const handleShowGrades = () => {
     setShowGrades(!showGrades);
@@ -31,6 +37,7 @@ export default function StudentCard({ student }: StudentCardProps) {
           <Typography>Company: {company}</Typography>
           <Typography>Skill: {skill}</Typography>
           <Typography>Average: {average}%</Typography>
+          <AddTag onTagCreation={createTag}></AddTag>
           <Styles.TestContainer>
             {showGrades &&
               grades.map((item, index) => {
