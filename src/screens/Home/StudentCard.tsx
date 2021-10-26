@@ -17,6 +17,7 @@ export default function StudentCard({ student }: StudentCardProps) {
     grades.length;
 
   const createTag = (value: string) => {
+    console.log(value);
     setTagName(value);
   };
 
@@ -37,7 +38,7 @@ export default function StudentCard({ student }: StudentCardProps) {
           <Typography>Company: {company}</Typography>
           <Typography>Skill: {skill}</Typography>
           <Typography>Average: {average}%</Typography>
-          <AddTag onTagCreation={createTag}></AddTag>
+
           <Styles.TestContainer>
             {showGrades &&
               grades.map((item, index) => {
@@ -48,8 +49,10 @@ export default function StudentCard({ student }: StudentCardProps) {
                 );
               })}
           </Styles.TestContainer>
+          <AddTag onTagCreation={createTag}></AddTag>
         </Styles.DetailsContainer>
       </Styles.GridItem>
+
       <Styles.GridItem onClick={handleShowGrades} justifySelf>
         {showGrades ? "-" : "+"}
       </Styles.GridItem>

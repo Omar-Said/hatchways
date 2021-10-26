@@ -8,7 +8,7 @@ export default function AddTag({ onTagCreation }: AddTagProps) {
   return (
     <Styles.Input
       onChange={(e) => onTagCreation(e.target.value)}
-      placeholder="Search Name Here"
+      placeholder="Add a tag"
       type="text"
     />
   );
