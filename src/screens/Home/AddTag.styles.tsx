@@ -16,3 +16,5 @@ export const Input = styled.input`
     color: #c2c2c2;
   }
 `;
+
+export const Form = styled.form``;

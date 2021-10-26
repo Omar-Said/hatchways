@@ -6,13 +6,9 @@ import AddTag from "./AddTag";
 
 interface StudentCardProps {
   student: Student;
-  onTagCreation: (value: string) => void;
 }
 
-export default function StudentCard({
-  student,
-  onTagCreation,
-}: StudentCardProps) {
+export default function StudentCard({ student }: StudentCardProps) {
   const [showGrades, setShowGrades] = useState(false);
 
   const { firstName, lastName, email, company, skill, grades } = student;
@@ -48,7 +44,7 @@ export default function StudentCard({
                 );
               })}
           </Styles.TestContainer>
-          <AddTag onTagCreation={onTagCreation}></AddTag>
+          <AddTag></AddTag>
         </Styles.DetailsContainer>
       </Styles.GridItem>
 
