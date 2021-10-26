@@ -17,9 +17,15 @@ export default function Home({
   }, [handleGetStudents]);
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [tagName, setTagName] = useState("");
 
   const handleSearchTerm = (value: string) => {
     setSearchTerm(value);
+  };
+
+  const createTag = (value: string) => {
+    console.log(value);
+    setTagName(value);
   };
 
   if (!loading && !students) {
@@ -39,7 +45,10 @@ export default function Home({
         {loading
           ? "loading"
           : filteredStudents?.map((student: Student) => (
-              <StudentCard student={student}></StudentCard>
+              <StudentCard
+                student={student}
+                onTagCreation={createTag}
+              ></StudentCard>
             ))}
       </Styles.Card>
     </Container>

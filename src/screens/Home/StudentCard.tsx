@@ -6,20 +6,19 @@ import AddTag from "./AddTag";
 
 interface StudentCardProps {
   student: Student;
+  onTagCreation: (value: string) => void;
 }
 
-export default function StudentCard({ student }: StudentCardProps) {
+export default function StudentCard({
+  student,
+  onTagCreation,
+}: StudentCardProps) {
   const [showGrades, setShowGrades] = useState(false);
-  const [tagName, setTagName] = useState("");
+
   const { firstName, lastName, email, company, skill, grades } = student;
   const average =
     grades.reduce((acc, current) => Number(acc) + Number(current), 0) /
     grades.length;
-
-  const createTag = (value: string) => {
-    console.log(value);
-    setTagName(value);
-  };
 
   const handleShowGrades = () => {
     setShowGrades(!showGrades);
@@ -49,7 +48,7 @@ export default function StudentCard({ student }: StudentCardProps) {
                 );
               })}
           </Styles.TestContainer>
-          <AddTag onTagCreation={createTag}></AddTag>
+          <AddTag onTagCreation={onTagCreation}></AddTag>
         </Styles.DetailsContainer>
       </Styles.GridItem>
 
