@@ -31,8 +31,16 @@ export default function StudentCard({ student }: StudentCardProps) {
           <Typography>Company: {company}</Typography>
           <Typography>Skill: {skill}</Typography>
           <Typography>Average: {average}%</Typography>
-
-          {showGrades && <p>Gooo</p>}
+          <Styles.TestContainer>
+            {showGrades &&
+              grades.map((item, index) => {
+                return (
+                  <Typography>
+                    Test {index + 1}:&nbsp;&nbsp; {item}%
+                  </Typography>
+                );
+              })}
+          </Styles.TestContainer>
         </Styles.DetailsContainer>
       </Styles.GridItem>
       <Styles.GridItem onClick={handleShowGrades} justifySelf>

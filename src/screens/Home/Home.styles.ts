@@ -51,3 +51,7 @@ export const GridItemImage = styled.img`
 export const DetailsContainer = styled.div`
   padding: 0.5rem 0 0 1rem;
 `;
+
+export const TestContainer = styled.div`
+  margin-top: 1rem;
+`;
