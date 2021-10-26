@@ -38,8 +38,8 @@ export default function Home({
       <Styles.Card>
         {loading
           ? "loading"
-          : filteredStudents?.map((student: Student) => (
-              <StudentCard student={student}></StudentCard>
+          : filteredStudents?.map((student: Student, index) => (
+              <StudentCard key={index} student={student}></StudentCard>
             ))}
       </Styles.Card>
     </Container>

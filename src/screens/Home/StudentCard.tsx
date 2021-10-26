@@ -38,7 +38,7 @@ export default function StudentCard({ student }: StudentCardProps) {
             {showGrades &&
               grades.map((item, index) => {
                 return (
-                  <Typography>
+                  <Typography key={index}>
                     Test {index + 1}:&nbsp;&nbsp; {item}%
                   </Typography>
                 );
