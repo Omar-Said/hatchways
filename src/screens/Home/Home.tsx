@@ -44,6 +44,7 @@ export default function Home({
                   <Styles.GridItemImage src={student.pic} alt="student image" />
                 </Styles.GridItem>
                 <StudentCard student={student}></StudentCard>
+                <Styles.GridItem justifySelf>+</Styles.GridItem>
               </Styles.Grid>
             ))}
       </Styles.Card>

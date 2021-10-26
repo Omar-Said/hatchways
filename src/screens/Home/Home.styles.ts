@@ -13,6 +13,7 @@ export const Grid = styled.div`
 export const GridItem = styled.div<{
   height?: number;
   width?: number;
+  justifySelf?: boolean;
 }>`
   ${(props) =>
     props.height &&
@@ -24,7 +25,18 @@ export const GridItem = styled.div<{
     css`
       width: ${props.width}px;
     `};
+
   margin: 1rem 0 1rem 1rem;
+  ${(props) =>
+    props.justifySelf &&
+    css`
+      margin-left: auto;
+      color: #aaaaaa;
+      font-size: 5rem;
+      margin-right: 1rem;
+      margin-top: 0;
+      justify-self: start;
+    `};
   overflow: hidden;
 `;
 
