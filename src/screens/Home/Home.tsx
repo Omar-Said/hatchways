@@ -39,13 +39,7 @@ export default function Home({
         {loading
           ? "loading"
           : filteredStudents?.map((student: Student) => (
-              <Styles.Grid key={student.id}>
-                <Styles.GridItem>
-                  <Styles.GridItemImage src={student.pic} alt="student image" />
-                </Styles.GridItem>
-                <StudentCard student={student}></StudentCard>
-                <Styles.GridItem justifySelf>+</Styles.GridItem>
-              </Styles.Grid>
+              <StudentCard student={student}></StudentCard>
             ))}
       </Styles.Card>
     </Container>
