@@ -1,11 +1,13 @@
-import { useState } from "react";
 import * as Styles from "./AddTag.styles";
+import { useDispatch } from "react-redux";
+import { addTag } from "../../redux/actions";
 
 export default function AddTag() {
-  const [addTag, setAddTag] = useState("");
+  const dispatch = useDispatch();
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    setAddTag(e.target[0]?.value);
+    dispatch(addTag(e.target[0].value));
     e.target.reset();
   };
 

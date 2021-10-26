@@ -6,6 +6,7 @@ import Container from "../../components/Container";
 import * as Styles from "./Home.styles";
 import StudentCard from "./StudentCard";
 import SearchBar from "./SearchBar";
+import TagSearchBar from "./TagSearchBar";
 
 export default function Home({
   handleGetStudents,
@@ -17,9 +18,14 @@ export default function Home({
   }, [handleGetStudents]);
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchTag, setSearchTag] = useState("");
 
   const handleSearchTerm = (value: string) => {
     setSearchTerm(value);
+  };
+
+  const handleSearchTagTerm = (value: string) => {
+    setSearchTag(value);
   };
 
   if (!loading && !students) {
@@ -35,6 +41,7 @@ export default function Home({
   return (
     <Container color="#fff">
       <SearchBar onSearchTerm={handleSearchTerm} />
+      <TagSearchBar onSearchTerm={handleSearchTagTerm} />
       <Styles.Card>
         {loading
           ? "loading"
