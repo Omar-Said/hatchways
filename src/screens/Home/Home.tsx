@@ -35,7 +35,7 @@ export default function Home({
     return <p>"Error occured"</p>;
   }
 
-  // This function filters the students by first name, last name and tags
+  // Filter students by search term
   const filteredStudents = students?.filter((student) => {
     if (searchTag.length && !searchTerm.length) {
       return student.tags?.some((tag) =>

@@ -8,14 +8,12 @@ export interface StudentsState {
   loading: boolean;
   error: string;
   students?: Student[];
-  tags?: any;
 }
 
 const initialState: StudentsState = {
   loading: false,
   error: "",
   students: [],
-  tags: "",
 };
 
 const students = (state = initialState, action: FetchStudentsAction) => {
