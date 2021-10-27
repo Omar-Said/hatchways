@@ -33,15 +33,7 @@ export default function StudentCard({ student }: StudentCardProps) {
           <Typography>Company: {company}</Typography>
           <Typography>Skill: {skill}</Typography>
           <Typography>Average: {average}%</Typography>
-          <Styles.TagContainer>
-            {tags &&
-              tags.map((tag, index) => (
-                <Tags title={tag.term} key={index}>
-                  {tag.term}
-                </Tags>
-              ))}
-          </Styles.TagContainer>
-          <Styles.TestContainer>
+          <Styles.TestContainer margin={showGrades ? 1 : 0}>
             {showGrades &&
               grades.map((item, index) => {
                 return (
@@ -51,6 +43,14 @@ export default function StudentCard({ student }: StudentCardProps) {
                 );
               })}
           </Styles.TestContainer>
+          <Styles.TagContainer>
+            {tags &&
+              tags.map((tag, index) => (
+                <Tags title={tag.term} key={index}>
+                  {tag.term}
+                </Tags>
+              ))}
+          </Styles.TagContainer>
           <AddTag studentId={student.id}></AddTag>
         </Styles.DetailsContainer>
       </Styles.GridItem>

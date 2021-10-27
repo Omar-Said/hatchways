@@ -52,8 +52,14 @@ export const DetailsContainer = styled.div`
   padding: 0.5rem 0 0 1rem;
 `;
 
-export const TestContainer = styled.div`
-  margin-top: 1rem;
+export const TestContainer = styled.div<{
+  margin?: number;
+}>`
+  ${(props) =>
+    props.margin &&
+    css`
+      margin-top: ${props.margin}rem;
+    `};
 `;
 
 export const TagContainer = styled.div`
