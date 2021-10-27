@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Student } from "../../types/FetchStudents";
 import { HomeProps } from ".";
 import Container from "../../components/Container";
-
 import * as Styles from "./Home.styles";
 import StudentCard from "./StudentCard";
 import SearchBar from "./SearchBar";

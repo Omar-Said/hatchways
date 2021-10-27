@@ -7,8 +7,8 @@ import AddTag from "./AddTag";
 interface StudentCardProps {
   student: Student;
 }
-
 export default function StudentCard({ student }: StudentCardProps) {
+  // console.log(student);
   const [showGrades, setShowGrades] = useState(false);
 
   const { firstName, lastName, email, company, skill, grades } = student;
@@ -44,7 +44,7 @@ export default function StudentCard({ student }: StudentCardProps) {
                 );
               })}
           </Styles.TestContainer>
-          <AddTag></AddTag>
+          <AddTag studentId={student.id}></AddTag>
         </Styles.DetailsContainer>
       </Styles.GridItem>
 

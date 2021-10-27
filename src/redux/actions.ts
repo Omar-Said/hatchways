@@ -1,15 +1,15 @@
-import { FetchStudentsActions, AddTagsToStudents } from "./constants";
+import { StudentActions } from "./constants";
 
 export const fetchStudents = () => {
   return {
-    type: FetchStudentsActions.FETCH_STUDENTS,
+    type: StudentActions.FETCH_STUDENTS,
   };
 };
 
 export const addTag = (payload: any) => {
   console.log("FIRED", payload);
   return {
-    type: AddTagsToStudents.ADD_TAGS,
+    type: StudentActions.ADD_TAGS,
     payload,
   };
 };

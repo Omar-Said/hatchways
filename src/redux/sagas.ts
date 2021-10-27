@@ -1,16 +1,16 @@
 import { fork, call, takeLatest, put } from "redux-saga/effects";
 import fetchStudents from "./middleware";
-import { FetchStudentsActions, AddTagsToStudents } from "./constants";
+import { StudentActions } from "./constants";
 import { Students } from "../types/FetchStudents";
 import { Tags } from "../types/Tags";
 
 export interface FetchStudentsAction {
-  type: FetchStudentsActions;
+  type: StudentActions;
   payload?: Students;
 }
 
-export interface AddTagsToStudent {
-  type: AddTagsToStudents;
+export interface AddTagsActions {
+  type: StudentActions;
   payload?: Tags;
 }
 
@@ -18,25 +18,38 @@ function* studentsSaga(action: FetchStudentsAction): any {
   try {
     const payload = yield call(fetchStudents);
     yield put({
-      type: FetchStudentsActions.FETCH_STUDENTS_SUCCESSFUL,
+      type: StudentActions.FETCH_STUDENTS_SUCCESSFUL,
       payload,
     });
   } catch (error) {
     yield put({
-      type: FetchStudentsActions.FETCH_STUDENTS_FAILURE,
+      type: StudentActions.FETCH_STUDENTS_FAILURE,
       payload: error,
     });
   }
 }
 
-function* addTags(action: AddTagsToStudent): any {}
+function* addTags(action: AddTagsActions): any {
+  console.log("SAGA", action.payload);
+  try {
+    yield put({
+      type: StudentActions.ADD_TAGS_SUCCESSFUL,
+      payload: action.payload,
+    });
+  } catch (error) {
+    yield put({
+      type: StudentActions.ADD_TAGS_FAILURE,
+      payload: error,
+    });
+  }
+}
 
 function* watchStudentsSaga() {
-  yield takeLatest(FetchStudentsActions.FETCH_STUDENTS, studentsSaga);
+  yield takeLatest(StudentActions.FETCH_STUDENTS, studentsSaga);
 }
 
 function* watchAddTags() {
-  yield takeLatest(AddTagsToStudents.ADD_TAGS, addTags);
+  yield takeLatest(StudentActions.ADD_TAGS, addTags);
 }
 
 export default function* rootSaga() {

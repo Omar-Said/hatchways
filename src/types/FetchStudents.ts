@@ -8,8 +8,14 @@ export interface Student {
   lastName: string;
   pic: string;
   skill: string;
+  tags: Tag[];
 }
 
 export interface Students {
   students: Student[];
+}
+
+export interface Tag {
+  term: string;
+  id: number;
 }
