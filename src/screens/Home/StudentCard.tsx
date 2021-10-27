@@ -11,7 +11,7 @@ export default function StudentCard({ student }: StudentCardProps) {
   // console.log(student);
   const [showGrades, setShowGrades] = useState(false);
 
-  const { firstName, lastName, email, company, skill, grades } = student;
+  const { firstName, lastName, email, company, skill, grades, tags } = student;
   const average =
     grades.reduce((acc, current) => Number(acc) + Number(current), 0) /
     grades.length;
@@ -33,7 +33,10 @@ export default function StudentCard({ student }: StudentCardProps) {
           <Typography>Company: {company}</Typography>
           <Typography>Skill: {skill}</Typography>
           <Typography>Average: {average}%</Typography>
-
+          {tags &&
+            tags.map((tag, index) => (
+              <Typography key={index}>{tag.term}</Typography>
+            ))}
           <Styles.TestContainer>
             {showGrades &&
               grades.map((item, index) => {

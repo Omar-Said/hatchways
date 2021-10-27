@@ -7,7 +7,6 @@ export const fetchStudents = () => {
 };
 
 export const addTag = (payload: any) => {
-  console.log("FIRED", payload);
   return {
     type: StudentActions.ADD_TAGS,
     payload,

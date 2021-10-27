@@ -41,7 +41,6 @@ const students = (state = initialState, action: FetchStudentsAction) => {
       };
     }
     case StudentActions.ADD_TAGS: {
-      console.log("REDUCER", action.payload);
       if (state.students && state.students.length) {
         let students = [...state.students];
         if (students && students.length) {

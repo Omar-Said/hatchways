@@ -15,7 +15,6 @@ export default function AddTag({ studentId }: AddTag) {
       term: e.target[0].value,
       id: id,
     };
-    console.log(payload);
     dispatch(addTag(payload));
     e.target.reset();
   };

@@ -31,11 +31,32 @@ export default function Home({
     return <p>"Error occured"</p>;
   }
 
-  const filteredStudents = students?.filter(
-    (student) =>
-      student.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      student.lastName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredStudents = students?.filter((student) => {
+    if (searchTag.length && !searchTerm.length) {
+      return student.tags?.some((tag) =>
+        tag.term.toLowerCase().includes(searchTag.toLowerCase())
+      );
+    }
+
+    if (searchTerm.length && !searchTag.length) {
+      return (
+        student.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        student.lastName.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    if (searchTerm.length && searchTag.length) {
+      return (
+        student.tags?.some((tag) =>
+          tag.term.toLowerCase().includes(searchTag.toLowerCase())
+        ) &&
+        (student.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          student.lastName.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+    }
+
+    return true;
+  });
 
   return (
     <Container color="#fff">
