@@ -1,12 +1,6 @@
 import React from "react";
 import * as Styles from "./Typography.styles";
-
-interface TypographyProps {
-  color?: string;
-  fontSize?: number;
-  fontWeight?: number;
-  capitalize?: boolean;
-}
+import { TypographyProps } from "./Typography.types";
 
 const Typography: React.FC<TypographyProps> = ({
   color = "#b0b0b0",

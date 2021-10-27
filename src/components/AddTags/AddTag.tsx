@@ -2,12 +2,9 @@ import * as Styles from "./AddTag.styles";
 import { useDispatch } from "react-redux";
 import { addTag } from "../../redux/actions";
 import { useState } from "react";
+import { AddTagProps } from "./AddTag.types";
 
-interface AddTag {
-  studentId: number;
-}
-
-export default function AddTag({ studentId }: AddTag) {
+export default function AddTag({ studentId }: AddTagProps) {
   const [tag, setTag] = useState("");
 
   const dispatch = useDispatch();

@@ -1,10 +1,7 @@
 import * as Styles from "../SearchBar/SearchBar.styles";
+import { TagSearchBarProps } from "./TagSearchBar.types";
 
-interface TagSearchBar {
-  onSearchTerm: (value: string) => void;
-}
-
-export default function TagSearchBar({ onSearchTerm }: TagSearchBar) {
+export default function TagSearchBar({ onSearchTerm }: TagSearchBarProps) {
   return (
     <Styles.Input
       onChange={(e) => onSearchTerm(e.target.value)}

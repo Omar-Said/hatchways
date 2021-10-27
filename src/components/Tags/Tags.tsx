@@ -1,9 +1,6 @@
 import React from "react";
 import * as Styles from "./Tags.styles";
-
-interface TagProps {
-  title: string;
-}
+import { TagProps } from "./Tags.types";
 
 const Tags: React.FC<TagProps> = ({ title, children }) => {
   return <Styles.Root title={title}>{children}</Styles.Root>;

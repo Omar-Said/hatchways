@@ -1,8 +1,5 @@
 import * as Styles from "./SearchBar.styles";
-
-interface SearchBarProps {
-  onSearchTerm: (value: string) => void;
-}
+import { SearchBarProps } from "./SearchBar.types";
 
 export default function SearchBar({ onSearchTerm }: SearchBarProps) {
   return (

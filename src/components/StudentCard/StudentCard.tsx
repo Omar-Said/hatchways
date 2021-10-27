@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { Student } from "../../types/Students";
 import Typography from "../Typography";
 import * as Styles from "../../screens/Home/Home.styles";
 import AddTag from "../AddTags/AddTag";
 import Tags from "../Tags";
+import { StudentCardProps } from "./StudentCard.types";
 
-interface StudentCardProps {
-  student: Student;
-}
 export default function StudentCard({ student }: StudentCardProps) {
   const { firstName, lastName, email, company, skill, grades, tags } = student;
 
