@@ -1,15 +1,12 @@
 import React from "react";
 import * as Styles from "./Tags.styles";
 
-interface TypographyProps {
-  color?: string;
-  fontSize?: number;
-  fontWeight?: number;
-  capitalize?: boolean;
+interface TagProps {
+  title: string;
 }
 
-const Typography: React.FC<TypographyProps> = ({ children }) => {
-  return <Styles.Root>{children}</Styles.Root>;
+const Tags: React.FC<TagProps> = ({ title, children }) => {
+  return <Styles.Root title={title}>{children}</Styles.Root>;
 };
 
-export default Typography;
+export default Tags;

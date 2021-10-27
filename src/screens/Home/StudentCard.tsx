@@ -36,7 +36,11 @@ export default function StudentCard({ student }: StudentCardProps) {
           <Typography>Average: {average}%</Typography>
           <Styles.TagContainer>
             {tags &&
-              tags.map((tag, index) => <Tags key={index}>{tag.term}</Tags>)}
+              tags.map((tag, index) => (
+                <Tags title={tag.term} key={index}>
+                  {tag.term}
+                </Tags>
+              ))}
           </Styles.TagContainer>
           <Styles.TestContainer>
             {showGrades &&
