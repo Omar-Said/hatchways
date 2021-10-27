@@ -3,6 +3,7 @@ import { Student } from "../../types/FetchStudents";
 import Typography from "../../components/Typography";
 import * as Styles from "./Home.styles";
 import AddTag from "./AddTag";
+import Tags from "../../components/Tags";
 
 interface StudentCardProps {
   student: Student;
@@ -33,10 +34,10 @@ export default function StudentCard({ student }: StudentCardProps) {
           <Typography>Company: {company}</Typography>
           <Typography>Skill: {skill}</Typography>
           <Typography>Average: {average}%</Typography>
-          {tags &&
-            tags.map((tag, index) => (
-              <Typography key={index}>{tag.term}</Typography>
-            ))}
+          <Styles.TagContainer>
+            {tags &&
+              tags.map((tag, index) => <Tags key={index}>{tag.term}</Tags>)}
+          </Styles.TagContainer>
           <Styles.TestContainer>
             {showGrades &&
               grades.map((item, index) => {

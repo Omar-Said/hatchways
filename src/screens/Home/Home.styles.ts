@@ -55,3 +55,9 @@ export const DetailsContainer = styled.div`
 export const TestContainer = styled.div`
   margin-top: 1rem;
 `;
+
+export const TagContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 620px;
+`;

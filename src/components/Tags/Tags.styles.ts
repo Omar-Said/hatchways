@@ -1,18 +1,14 @@
 import styled, { css } from "styled-components";
 
-export const Root = styled.div<{
-  color: string;
-  fontSize: number;
-  fontWeight: number;
-  capitalize: boolean;
-}>`
-  color: ${(props) => props.color};
-  font-size: ${(props) => props.fontSize}rem;
-  font-weight: ${(props) => props.fontWeight};
-  ${(props) =>
-    props.capitalize &&
-    css`
-      text-transform: uppercase;
-    `};
-  font-family: Raleway;
+export const Root = styled.div`
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  width: 4.375rem;
+  height: 2.1875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway";
+  margin-top: 1rem;
+  margin-right: 0.4rem;
 `;
