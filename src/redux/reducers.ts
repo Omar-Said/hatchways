@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import { Student } from "../types/FetchStudents";
-import { Tag } from "../types/FetchStudents";
+import { Student } from "../types/Students";
+import { Tag } from "../types/Students";
 import { StudentActions } from "./constants";
 import { FetchStudentsAction } from "./sagas";
 

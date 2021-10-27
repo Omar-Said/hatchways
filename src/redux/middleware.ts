@@ -1,6 +1,6 @@
 import { api } from "../config/axios";
 import { GET_STUDENTS } from "../config/constants";
-import { Students } from "../types/FetchStudents";
+import { Students } from "../types/Students";
 
 const fetchStudents = async () => {
   const response = await api.get<Students>(GET_STUDENTS);

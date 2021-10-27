@@ -1,7 +1,7 @@
 import { fork, call, takeLatest, put } from "redux-saga/effects";
 import fetchStudents from "./middleware";
 import { StudentActions } from "./constants";
-import { Students } from "../types/FetchStudents";
+import { Students } from "../types/Students";
 import { Tags } from "../types/Tags";
 
 export interface FetchStudentsAction {

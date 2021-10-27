@@ -23,8 +23,8 @@ export default function AddTag({ studentId }: AddTag) {
   };
 
   return (
-    <Styles.Form onSubmit={(e) => handleSubmit(e)}>
-      <Styles.Input
+    <Styles.TagForm onSubmit={(e) => handleSubmit(e)}>
+      <Styles.TagInput
         name="tagInput"
         value={tag}
         placeholder="Add a tag"
@@ -33,6 +33,6 @@ export default function AddTag({ studentId }: AddTag) {
           setTag(e.target.value);
         }}
       />
-    </Styles.Form>
+    </Styles.TagForm>
   );
 }

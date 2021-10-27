@@ -1,4 +1,4 @@
-import * as Styles from "./SearchBar.styles";
+import * as Styles from "../SearchBar/SearchBar.styles";
 
 interface TagSearchBar {
   onSearchTerm: (value: string) => void;

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Student } from "../../types/FetchStudents";
+import { Student } from "../../types/Students";
 import { HomeProps } from ".";
 
 // Components
-import StudentCard from "./StudentCard";
-import SearchBar from "./SearchBar";
-import TagSearchBar from "./TagSearchBar";
+import StudentCard from "../../components/StudentCard/StudentCard";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import TagSearchBar from "../../components/TagSearchBar/TagSearchBar";
 import Container from "../../components/Container";
 
 // Styles

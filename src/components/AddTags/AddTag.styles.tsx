@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Input = styled.input`
+export const TagInput = styled.input`
   border-top: none;
   border-right: none;
   border-left: none;
@@ -17,4 +17,4 @@ export const Input = styled.input`
   }
 `;
 
-export const Form = styled.form``;
+export const TagForm = styled.form``;

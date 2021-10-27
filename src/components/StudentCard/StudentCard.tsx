@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Student } from "../../types/FetchStudents";
-import Typography from "../../components/Typography";
-import * as Styles from "./Home.styles";
-import AddTag from "./AddTag";
-import Tags from "../../components/Tags";
+import { Student } from "../../types/Students";
+import Typography from "../Typography";
+import * as Styles from "../../screens/Home/Home.styles";
+import AddTag from "../AddTags/AddTag";
+import Tags from "../Tags";
 
 interface StudentCardProps {
   student: Student;
