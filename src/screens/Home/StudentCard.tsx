@@ -9,7 +9,6 @@ interface StudentCardProps {
   student: Student;
 }
 export default function StudentCard({ student }: StudentCardProps) {
-  // console.log(student);
   const [showGrades, setShowGrades] = useState(false);
 
   const { firstName, lastName, email, company, skill, grades, tags } = student;
@@ -56,9 +55,9 @@ export default function StudentCard({ student }: StudentCardProps) {
         </Styles.DetailsContainer>
       </Styles.GridItem>
 
-      <Styles.GridItem onClick={handleShowGrades} justifySelf>
+      <Styles.Button onClick={handleShowGrades} justifySelf>
         {showGrades ? "-" : "+"}
-      </Styles.GridItem>
+      </Styles.Button>
     </Styles.Grid>
   );
 }

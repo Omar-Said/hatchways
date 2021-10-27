@@ -30,7 +30,6 @@ function* studentsSaga(action: FetchStudentsAction): any {
 }
 
 function* addTags(action: AddTagsActions): any {
-  console.log("SAGA", action.payload);
   try {
     yield put({
       type: StudentActions.ADD_TAGS_SUCCESSFUL,

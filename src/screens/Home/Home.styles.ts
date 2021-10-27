@@ -61,3 +61,20 @@ export const TagContainer = styled.div`
   flex-wrap: wrap;
   max-width: 620px;
 `;
+
+export const Button = styled.button<{
+  justifySelf?: boolean;
+}>`
+  ${(props) =>
+    props.justifySelf &&
+    css`
+      margin-left: auto;
+      font-size: 4rem;
+      margin-right: 1rem;
+      justify-self: start;
+      align-self: start;
+    `};
+  background-color: #fff;
+  border: none;
+  color: #aaaaaa;
+`;

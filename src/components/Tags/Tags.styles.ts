@@ -14,4 +14,5 @@ export const Root = styled.div`
   text-overflow: ellipsis;
   display: block;
   padding: 7px;
+  text-align: center;
 `;
