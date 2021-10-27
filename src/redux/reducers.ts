@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { Student } from "../types/FetchStudents";
 import { Tag } from "../types/FetchStudents";
 import { StudentActions } from "./constants";
-import { AddTagsActions, FetchStudentsAction } from "./sagas";
+import { FetchStudentsAction } from "./sagas";
 
 export interface StudentsState {
   loading: boolean;

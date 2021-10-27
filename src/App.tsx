@@ -1,5 +1,7 @@
-import React from "react";
+// Components
 import Home from "./screens/Home";
+
+// Styles
 import GlobalStyles from "./styles/GlobalStyles";
 
 function App() {

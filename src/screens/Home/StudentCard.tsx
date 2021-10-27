@@ -9,9 +9,11 @@ interface StudentCardProps {
   student: Student;
 }
 export default function StudentCard({ student }: StudentCardProps) {
+  const { firstName, lastName, email, company, skill, grades, tags } = student;
+
   const [showGrades, setShowGrades] = useState(false);
 
-  const { firstName, lastName, email, company, skill, grades, tags } = student;
+  // Takes in an array of grades and reduces it to populate an average per student
   const average =
     grades.reduce((acc, current) => Number(acc) + Number(current), 0) /
     grades.length;
@@ -19,6 +21,7 @@ export default function StudentCard({ student }: StudentCardProps) {
   const handleShowGrades = () => {
     setShowGrades(!showGrades);
   };
+
   return (
     <Styles.Grid key={student.id}>
       <Styles.GridItem>

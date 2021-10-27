@@ -19,7 +19,6 @@ const mapStateToProps = (state: RootState) => {
     loading: state.students.loading,
     error: state.students.error,
     students: state.students.students,
-    tags: state.students.tags,
   };
 };
 

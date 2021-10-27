@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Student } from "../../types/FetchStudents";
 import { HomeProps } from ".";
-import Container from "../../components/Container";
-import * as Styles from "./Home.styles";
+
+// Components
 import StudentCard from "./StudentCard";
 import SearchBar from "./SearchBar";
 import TagSearchBar from "./TagSearchBar";
+import Container from "../../components/Container";
+
+// Styles
+import * as Styles from "./Home.styles";
 
 export default function Home({
   handleGetStudents,
@@ -31,6 +35,7 @@ export default function Home({
     return <p>"Error occured"</p>;
   }
 
+  // This function filters the students by first name, last name and tags
   const filteredStudents = students?.filter((student) => {
     if (searchTag.length && !searchTerm.length) {
       return student.tags?.some((tag) =>

@@ -1,10 +1,19 @@
+// React
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+// Redux
 import { Provider } from "react-redux";
 import store from "./redux/";
+
+// Router
 import { BrowserRouter } from "react-router-dom";
+
+// Components
+import App from "./App";
+
+// Fonts
 import "./assets/fonts/fonts.css";
 
 ReactDOM.render(

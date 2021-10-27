@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Input = styled.input`
   border-top: none;
@@ -13,4 +13,5 @@ export const Input = styled.input`
     outline: none;
     border-bottom: 2px solid black;
   }
+  font-family: Raleway;
 `;
