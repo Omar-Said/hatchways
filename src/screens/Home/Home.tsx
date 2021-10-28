@@ -40,24 +40,36 @@ export default function Home({
   const filteredStudents = students?.filter((student) => {
     if (searchTag.length && !searchTerm.length) {
       return student.tags?.some((tag) =>
-        tag.term.toLowerCase().includes(searchTag.toLowerCase())
+        tag.term.toLowerCase().trim().includes(searchTag.toLowerCase().trim())
       );
     }
 
     if (searchTerm.length && !searchTag.length) {
       return (
-        student.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        student.lastName.toLowerCase().includes(searchTerm.toLowerCase())
+        student.firstName
+          .toLowerCase()
+          .trim()
+          .includes(searchTerm.toLowerCase().trim()) ||
+        student.lastName
+          .toLowerCase()
+          .trim()
+          .includes(searchTerm.toLowerCase().trim())
       );
     }
 
     if (searchTerm.length && searchTag.length) {
       return (
         student.tags?.some((tag) =>
-          tag.term.toLowerCase().includes(searchTag.toLowerCase())
+          tag.term.toLowerCase().trim().includes(searchTag.toLowerCase().trim())
         ) &&
-        (student.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          student.lastName.toLowerCase().includes(searchTerm.toLowerCase()))
+        (student.firstName
+          .toLowerCase()
+          .trim()
+          .includes(searchTerm.toLowerCase().trim()) ||
+          student.lastName
+            .toLowerCase()
+            .trim()
+            .includes(searchTerm.toLowerCase().trim()))
       );
     }
 
