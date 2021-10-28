@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Typography from "../Typography";
-import * as Styles from "../../screens/Home/Home.styles";
-import AddTag from "../AddTags/AddTag";
-import Tags from "../Tags";
+import Typography from "../../../components/Typography";
+import * as Styles from "../Home.styles";
+import AddTag from "../../../components/AddTags/AddTag";
+import Tags from "../../../components/Tags";
 import { StudentCardProps } from "./StudentCard.types";
 
 export default function StudentCard({ student }: StudentCardProps) {

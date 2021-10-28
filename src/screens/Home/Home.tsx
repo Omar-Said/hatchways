@@ -3,7 +3,7 @@ import { Student } from "../../types/Students";
 import { HomeProps } from ".";
 
 // Components
-import StudentCard from "../../components/StudentCard/StudentCard";
+import StudentCard from "./StudentCard";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import TagSearchBar from "../../components/TagSearchBar/TagSearchBar";
 import Container from "../../components/Container";
