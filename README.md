@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# Student Profile
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple app that displays a student's profile that used TypeScript and Redux-Saga.
 
-## Available Scripts
+## Try it out!
 
-In the project directory, you can run:
+[Student Profile](https://student-profile-cards.netlify.app/)
 
-### `npm start`
+## Install and Run
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+CLI Commands for Download, Local Installation and Start
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+https://github.com/Omar-Said/hatchways.git
 
-### `npm test`
+cd hatchways
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm i && npm start
+// -> Visit http://localhost:3000
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## UI Decisions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- <b>Styled Components</b>: I chose to use styled components due to the power that this library contains. It has great reusability and works great with TypeScript. I decided to refrain from using Bootstrap or Material or Tailwind as this is a simple project and I wanted to avoid the boilerplate.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My Toolbox
 
-### `npm run eject`
+Get set up with these very quickly using [create-next-app]
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+      npx create-react-app student-profiles --template typescript
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### :card_file_box: &nbsp;&nbsp;[Redux](https://redux.js.org/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### :toolbox: &nbsp;&nbsp; [Redux-Saga](https://redux-saga.js.org/) | [Styled Component](https://styled-components.com/) | [Axios](https://axios-http.com/docs/intro)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Created Types for JSON response from the REST. API
 
-## Learn More
+## App Configuration & State Management
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<b>Constants</b>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- API url
+
+<b>Global State</b>
+
+- `students`: JSON data
+
+<b>Actions</b>
+
+- `FetchStudents`: Get students from the REST API.
+- `AddTag`: Adds a tag to a student's profile.
+
+## Would be nice to have:
+
+- Added Jest testing.
+- CSS animations for expandable view
+- Enhanced loading and error handling
+- Data persistence
+
+## Thank You!
+
+Thanks, Mosaic, for this take home challenge.
+
+Roughly, I spent:
+
+- 12 hours create the components and complete the CSS.
+- 1 hour of testing
+- 30 minutes on documentation
+- 10 minutes to deploy
+- 1 hour codebase cleanup and minor refactors
+
+Really enjoyed working on this mini project, Cheers!
