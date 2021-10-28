@@ -10,6 +10,7 @@ import Container from "../../components/Container";
 
 // Styles
 import * as Styles from "./Home.styles";
+import Typography from "../../components/Typography";
 
 export default function Home({
   handleGetStudents,
@@ -68,11 +69,17 @@ export default function Home({
       <SearchBar onSearchTerm={handleSearchTerm} />
       <TagSearchBar onSearchTerm={handleSearchTagTerm} />
       <Styles.Card>
-        {loading
-          ? "loading"
-          : filteredStudents?.map((student: Student, index) => (
-              <StudentCard key={index} student={student}></StudentCard>
-            ))}
+        {loading ? (
+          "loading"
+        ) : filteredStudents?.length ? (
+          filteredStudents?.map((student: Student, index) => (
+            <StudentCard key={index} student={student}></StudentCard>
+          ))
+        ) : (
+          <Styles.Grid>
+            <Typography textAlignCenter>No Results</Typography>
+          </Styles.Grid>
+        )}
       </Styles.Card>
     </Container>
   );

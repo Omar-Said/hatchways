@@ -5,6 +5,7 @@ export const Root = styled.div<{
   fontSize: number;
   fontWeight: number;
   capitalize: boolean;
+  textAlignCenter: boolean;
 }>`
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize}rem;
@@ -13,6 +14,14 @@ export const Root = styled.div<{
     props.capitalize &&
     css`
       text-transform: uppercase;
+    `};
+  ${(props) =>
+    props.textAlignCenter &&
+    css`
+      text-align: center;
+      width: 100%;
+      height: 50px;
+      padding-top: 1rem;
     `};
   font-family: Raleway;
 `;

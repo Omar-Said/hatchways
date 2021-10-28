@@ -7,6 +7,7 @@ const Typography: React.FC<TypographyProps> = ({
   fontSize = 1,
   fontWeight = 300,
   capitalize = false,
+  textAlignCenter = false,
   children,
 }) => {
   return (
@@ -15,6 +16,7 @@ const Typography: React.FC<TypographyProps> = ({
       fontSize={fontSize}
       fontWeight={fontWeight}
       capitalize={capitalize}
+      textAlignCenter={textAlignCenter}
     >
       {children}
     </Styles.Root>

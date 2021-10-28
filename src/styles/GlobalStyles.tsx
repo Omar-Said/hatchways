@@ -11,7 +11,6 @@ html, body, #root  {
 
 input {
   font-family: Raleway;
-  padding-left: 1rem;
 }
 *,
 *::before,

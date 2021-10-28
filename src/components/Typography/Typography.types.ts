@@ -3,4 +3,5 @@ export interface TypographyProps {
   fontSize?: number;
   fontWeight?: number;
   capitalize?: boolean;
+  textAlignCenter?: boolean;
 }
